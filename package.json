@@ -1,0 +1,17 @@
+{
+  "name": "cypress_livesport",
+  "version": "1.0.0",
+  "description": "Cypress Livesport",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "author": "Michal Kefurt",
+  "license": "ISC",
+  "devDependencies": {
+    "@simonsmith/cypress-image-snapshot": "^6.0.0",
+    "cypress": "^10.9.0",
+    "cypress-real-events": "^1.7.1"
+  }
+}
