@@ -5,6 +5,7 @@ const {
 
 module.exports = defineConfig({
   e2e: {
+    baseUrl: 'https://www.flashscore.com',
     setupNodeEvents(on, config) {
       addMatchImageSnapshotPlugin(on, config);
     },

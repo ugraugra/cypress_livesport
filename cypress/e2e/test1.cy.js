@@ -1,4 +1,6 @@
-const url = 'https://www.flashscore.com/match/runqgBqi/#/match-summary/match-summary'
+/// <reference types ="cypress" />
+
+const urlMatchSummary = '/match/runqgBqi/#/match-summary/match-summary'
 const tooltipElement = '#tooltip-1'
 const incidents = [
   {
@@ -35,10 +37,12 @@ const incidents = [
 
 
 describe('Match Summary', { scrollBehavior: 'center' }, () => {
-  it('Záložka Match a správné zobrazení elementů', () => {
-    cy.visit(url)
-    cy.closeCookies()
+  before(function() {
+	  	cy.setCookies()
+	 })
 
+  it('Záložka Match a správné zobrazení elementů', () => {
+    cy.visit(urlMatchSummary)
     incidents.forEach(incident => {
       cy.get(incident.iconLocator).eq(incident.elementIndex).realHover()
       cy.get(tooltipElement).should('have.text', incident.tooltip)
